@@ -14,9 +14,23 @@ function TaskList() {
   const [tasks, setTasks] = useState(getTasks());
   const [taskTitle, setTaskTitle] = useState("");
 
+  function handleAddTask(e) {
+    e.preventDefault();
+
+    const newTask = {
+      title: taskTitle,
+      completed: false,
+    };
+
+    addTask(newTask);
+
+    setTaskTitle("");
+    setTasks(getTasks());
+  }
+
   return (
     <div className="TaskList">
-      <form>
+      <form onSubmit={handleAddTask}>
         <input
           type="text"
           placeholder="Enter a task..."
