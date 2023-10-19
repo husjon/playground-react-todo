@@ -30,4 +30,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
 
       - name: upload
-        run: rsync -av ./build ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:todo/
+        run: |
+          rsync -av --delete-before \
+            ./build/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:todo/
