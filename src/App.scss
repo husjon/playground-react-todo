@@ -46,14 +46,14 @@
       gap: 0.25em;
 
       .Task {
-        padding: 0.5em 0em 0.5em 1em;
+        padding: 0.5em 1em 0.5em 1em;
         border-radius: 0.5em;
         background-color: #2b2a33;
         display: grid;
-        grid-template-columns: 33em 2em;
+        grid-template-columns: 1fr 2em;
 
         .label {
-          line-height: 2em;
+          line-height: 1.5em;
 
           &.completed {
             text-decoration: line-through;
