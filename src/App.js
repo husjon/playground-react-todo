@@ -1,5 +1,5 @@
+import { useState } from "react";
 import "./App.scss";
-import { tasks } from "./data";
 import { addTask, getTasks, updateTask } from "./storage";
 
 export default function App() {
@@ -11,6 +11,9 @@ export default function App() {
 }
 
 function TaskList() {
+  const [tasks, setTasks] = useState(getTasks());
+  const [taskTitle, setTaskTitle] = useState("");
+
   return (
     <div className="TaskList">
       <form>
