@@ -54,9 +54,11 @@
 
         .label {
           line-height: 1.5em;
+          font-weight: bold;
 
           &.completed {
             text-decoration: line-through;
+            font-weight: 100;
           }
         }
 
