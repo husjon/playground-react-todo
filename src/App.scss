@@ -19,10 +19,10 @@
   list-style-type: none;
 }
 .App {
+  padding: 1em;
+
   .TaskList {
     form {
-      padding: 5px;
-
       input {
         border: 0;
         box-sizing: border-box;
@@ -39,7 +39,7 @@
     }
 
     .Tasks {
-      padding: 5px;
+      padding: 1em 0;
       margin: 0;
 
       display: grid;
