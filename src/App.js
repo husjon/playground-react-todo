@@ -21,7 +21,7 @@ function TaskList() {
       </form>
       <ul className="Tasks">
         {tasks.map((task) => (
-          <Task task={task} />
+          <Task task={task} key={task.id} />
         ))}
       </ul>
     </div>
