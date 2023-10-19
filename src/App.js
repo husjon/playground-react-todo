@@ -20,9 +20,11 @@ function TaskList() {
         <input type="text" placeholder="Enter a task..." />
       </form>
       <ul className="Tasks">
-        {tasks.map((task) => (
-          <Task task={task} key={task.id} />
-        ))}
+        {tasks
+          .sort((a, b) => a.completed - b.completed)
+          .map((task) => (
+            <Task task={task} key={task.id} />
+          ))}
       </ul>
     </div>
   );
