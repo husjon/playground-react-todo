@@ -33,4 +33,10 @@ jobs:
         run: |
           rsync -av --delete-before \
             ./build/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:todo/
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:apps/todo/
+
+      - name: start container
+        run: |
+          sudo docker stop todo
+          sudo docker rm todo
+          sudo docker run --name todo -ti -d --volume "`pwd`/apps/todo:/usr/share/nginx/html" nginx:alpine
