@@ -41,6 +41,7 @@ function TaskList() {
           placeholder="Enter a task..."
           value={taskTitle}
           onChange={(e) => setTaskTitle(e.target.value)}
+          autoFocus
         />
       </form>
       <ul className="Tasks">
