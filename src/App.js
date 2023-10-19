@@ -28,6 +28,11 @@ function TaskList() {
     setTasks(getTasks());
   }
 
+  function handleTaskToggle(task) {
+    updateTask(task.id, { completed: !task.completed });
+    setTasks(getTasks());
+  }
+
   return (
     <div className="TaskList">
       <form onSubmit={handleAddTask}>
@@ -42,20 +47,25 @@ function TaskList() {
         {tasks
           .sort((a, b) => a.completed - b.completed)
           .map((task) => (
-            <Task task={task} key={task.id} />
+            <Task task={task} key={task.id} onToggle={handleTaskToggle} />
           ))}
       </ul>
     </div>
   );
 }
 
-function Task({ task }) {
+function Task({ task, onToggle }) {
   return (
     <li className="Task">
       <div className={`label ${task.completed ? "completed" : ""}`}>
         {task.title}
       </div>
-      <input className="checkbox" type="checkbox" checked={task.completed} />
+      <input
+        className="checkbox"
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => onToggle(task)}
+      />
     </li>
   );
 }
