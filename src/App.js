@@ -1,5 +1,6 @@
 import "./App.scss";
 import { tasks } from "./data";
+import { addTask, getTasks, updateTask } from "./storage";
 
 export default function App() {
   return (
