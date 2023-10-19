@@ -17,7 +17,12 @@ function TaskList() {
   return (
     <div className="TaskList">
       <form>
-        <input type="text" placeholder="Enter a task..." />
+        <input
+          type="text"
+          placeholder="Enter a task..."
+          value={taskTitle}
+          onChange={(e) => setTaskTitle(e.target.value)}
+        />
       </form>
       <ul className="Tasks">
         {tasks
