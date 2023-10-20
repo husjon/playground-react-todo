@@ -1,5 +1,5 @@
 export function addTask(task) {
-  const id = localStorage.length;
+  const id = crypto.randomUUID();
   task["id"] = id;
   localStorage.setItem(id, JSON.stringify(task));
 }
