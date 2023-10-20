@@ -29,3 +29,7 @@ export function updateTask(id, { title = null, completed = null }) {
   };
   localStorage.setItem(id, JSON.stringify(task));
 }
+
+export function deleteTask(id) {
+  localStorage.removeItem(id);
+}

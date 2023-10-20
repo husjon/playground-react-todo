@@ -21,6 +21,19 @@
 .App {
   padding: 1em;
 
+  button {
+    border: 0;
+    background-color: rgb(155, 62, 62);
+    cursor: pointer;
+    border: 1px solid rgba(155, 62, 62, 0);
+  }
+  button:hover {
+    background-color: rgb(189, 67, 67);
+  }
+  button:active {
+    background-color: rgb(121, 53, 53);
+  }
+
   .TaskList {
     form {
       input {
@@ -49,22 +62,31 @@
         padding: 0.5em 1em 0.5em 1em;
         border-radius: 0.5em;
         background-color: #2b2a33;
-        display: grid;
-        grid-template-columns: 1fr 2em;
 
-        .label {
-          line-height: 1.5em;
-          font-weight: bold;
+        .header {
+          display: grid;
+          grid-template-columns: 1fr 2em;
 
-          &.completed {
-            color: #7d7b8a;
-            font-weight: 100;
+          .label {
+            line-height: 1.5em;
+
+            &.completed {
+              color: #7d7b8a;
+            }
+
+            &.selected {
+              font-weight: bold;
+            }
+          }
+
+          input[type="checkbox"] {
+            margin: 0;
+            border-radius: 20px;
           }
         }
-
-        input[type="checkbox"] {
-          margin: 0;
-          border-radius: 20px;
+        .controls {
+          margin-top: 0.5em;
+          // border: 1px solid red;
         }
       }
     }
